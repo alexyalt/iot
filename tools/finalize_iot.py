@@ -175,7 +175,9 @@ def main(write=False):
     print(f'переименовано дублей тегов: {n_renamed}')
     print(f'перенумеровано пунктов: {n_renum}')
     print(f'исправлено ссылок на пункты: {n_links}')
-    print(f'остаточных артефактов [[[: {text.count("[[[")}, ]]{}}}: {text.count("]]]")}')
+    n_open = text.count("[[[")
+    n_close = text.count("]]]")
+    print(f"остаточных артефактов открывающих: {n_open}, закрывающих: {n_close}")
     print(f'строк на выходе: {len(out)}')
 
     if write:
