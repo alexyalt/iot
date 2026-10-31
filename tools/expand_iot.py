@@ -121,7 +121,26 @@ def main(write=False):
     lines = open(SRC, encoding='utf-8').read().split('\n')
     docs, order = split_blocks(lines)
 
-    # предварительная нормализация документов с внутренними ссылками (СПС-04, СПС-05)
+    # достраивание сокращённых документов (ИОТ-СПС-04/05) до полной формы:
+    # общие блоки берутся из ИОТ-СПС-03, собственные (должностные) — из документа
+    LINEAR_DOCS = ('ИОТ-СПС-04', 'ИОТ-СПС-05')
+    sps03_src = docs.get('ИОТ-СПС-03', [])
+    for code in LINEAR_DOCS:
+        if code not in docs:
+            continue
+        own = collect_tag_blocks(docs[code])
+        rebuilt = []
+        for l in sps03_src:
+            m = TAG_RE.match(l)
+            if m and m.group(1) in own:
+                rebuilt.extend(strip_trailing_blanks(own[m.group(1)]))
+            else:
+                rebuilt.append(l)
+        # вставляем собственные блоки с тегами ОБЩ-10/ОБЩ-11 (упомянуты в тексте
+        # самого документа) на место канонических; остальные общие — из СПС-03
+        docs[code] = rebuilt
+
+    # предварительная нормализация документов с внутренними ссылками
     for code in list(docs):
         if any(l.strip().startswith('[[[') for l in docs[code]):
             docs[code] = normalize_doc(docs[code])
