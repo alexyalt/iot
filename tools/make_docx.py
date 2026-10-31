@@ -18,7 +18,7 @@ from docx import Document
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.shared import Pt, Cm
 
-SRC = 'iotraw_expanded'
+SRC = 'iotraw_final'
 OUT = 'docx_final'
 
 TAG_RE = re.compile(r'^\[\{\[([^\]]+)\]\}\]')
