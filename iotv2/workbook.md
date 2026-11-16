@@ -178,3 +178,49 @@
 - Positions covered: Ведущий инженер садово-паркового хозяйства; Ведущий садовник; Главный садовник.
 - Remaining landscape-service positions not yet covered: Начальник садово-парковой службы, Агроном, Главный агроном, Техник по эксплуатации, Оператор по поливу, Уборщик территорий.
 - The "Руководители" instruction (Агроном / Начальник СПС / Главный агроном) still uses the old free-form structure and needs the same standardization pass.
+
+
+---
+
+## Запись 4: Standardization of the landscape-service managers instruction against the gardener instruction
+**Date:** 16 November 2026
+**Status:** Completed
+
+### Task received:
+1. Every clause that duplicates content of `Инструкция_по_охране_труда_Садовник.md` must be **word-for-word identical** (standardization).
+2. Preserve the **structure and clause numbering** of the gardener instruction exactly.
+3. Clause 3.2.2.1 (electrical tool) — remove certificate / three-wire plug and similar wording; base on the gardener instruction instead; add a few **control** clauses.
+
+### Approach used (important for next iterations):
+- The instruction was **rebuilt as a literal copy** of `Инструкция_по_охране_труда_Садовник.md`, NOT edited from the previous version.
+- Only position names were substituted (11 exact replacement patterns):
+  - Садовник -> Ведущий инженер садово-паркового хозяйства
+  - Младший садовник -> Ведущий садовник
+  - Рабочий по благоустройству -> Главный садовник
+- Then 8 control clauses were appended (numbering continues the reference, no renumbering of reference clauses).
+
+### Verification performed:
+- 168 text blocks of the reference (after position substitution) found **verbatim** in the new file -> 0 missing.
+- 52 headings: identical except the 4 that contain position names.
+- Clause numbers present only in the new file: 1.3.7, 1.5.3, 2.1.3, 3.1.8, 3.4.4, 3.5.2, 3.5.3, 3.5.4. Nothing from the reference is missing.
+- Forbidden wording removed: no "сертифика", "трехпроводн", "заземлен" anywhere in the file.
+- Electrical tool text is now exactly the reference clause 3.4.3.
+
+### Added control clauses (the only deviations from the reference):
+| Clause | Content |
+|--------|---------|
+| 1.3.7 | Definition of "руководящий работник садово-парковой службы" |
+| 1.4.1 (bullet) | Added physical factor: нервно-эмоциональное напряжение при руководстве группой |
+| 1.5.3 | Additional duties of the manager (СИЗ control, tool serviceability, no work without briefing, stop work on violation) |
+| 2.1.3 | Check readiness of subordinates' workplaces before work |
+| 3.1.8 | Control functions during work (observation, checking techniques, stopping work, reporting) |
+| 3.4.4 | Control of tool/equipment serviceability (issuing, rejecting, repair, СИЗ replacement) |
+| 3.5.2 | Organizing group work: senior appointed, distribution by qualification, communication, road duty, height spotter |
+| 3.5.3 | Procedure when a subordinate violates OSH requirements |
+| 3.5.4 | Prohibited to allow subordinates to work without briefing / without СИЗ / with faulty tools / with un-removed hazards |
+
+### Notes for the next iteration:
+- Instruction file: `iotv2/Инструкция_по_охране_труда_Садово-парковая_служба_руководители.md` (was fully overwritten, ~36 K chars, 713 lines).
+- Appendix structure is now identical to the gardener file: Приложение №1 (index) + 1.1 / 1.2 / 1.3 with empty table templates (no pre-filled СОУТ/ОПР/СИЗ data) — per the reference style.
+- Previous verbose version (with pre-filled СОУТ/ОПР/СИЗ tables) is superseded by this standardized version.
+- If a next group of positions is requested: reuse the same pipeline — copy `Инструкция_по_охране_труда_Садовник.md`, substitute position names, then append control clauses with numbers continuing the last clause of the section.
