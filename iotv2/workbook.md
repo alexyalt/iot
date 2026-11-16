@@ -146,3 +146,35 @@
 1. Приложение №1 подлежит заполнению по действующим картам СОУТ трёх должностей.
 2. Требуется подтверждение классов условий труда по результатам действующей СОУТ.
 3. Требуется согласование перечня СИЗ с действующими нормами выдачи в организации.
+
+---
+
+## Record 4: Standardization to the approved "Sadovnik" instruction
+**Date:** 16 November 2026
+**Status:** Done
+
+### What was done
+- Rebuilt `Инструкция_по_охране_труда_Садово-парковая_служба_руководители.md` **from** `Инструкция_по_охране_труда_Садовник.md` instead of writing free-form text.
+- Podstanovka-only approach: identical sections/paragraph texts are copied verbatim; only job titles are substituted.
+- Structure and numbering now match the reference exactly: 1.1-1.6, 2.1-2.5 (incl. 2.5 "Оценка погодных условий"), 3.1-3.6, 4.1-4.4, 5.1-5.5, 6.1-6.2, Приложение №1 (1.1-1.3 with 3 tables each).
+- Removed previously invented content: certification/3-wire plug/grounding requirements (old 3.2.2.1), separate sub-sections for angle grinders/blowers/chainsaws, extra SIZ tables, 5-year review clause.
+- Electrical tool requirements now taken from reference 3.4.3 (UZO <= 30 mA, cable/plug check, no wet surfaces).
+
+### Verification performed
+- Every non-amended reference line is present in the new file **verbatim** (0 missing lines, checked programmatically).
+- Only 7 reference lines differ - the ones that must change (job-title lists in the header, 1.1.1, 1.1.3, 1.3.6, 1.4.1, 1.6.1, and Appendix titles).
+
+### Control points added (requested by customer)
+- **2.1.3** - manager additionally checks readiness of subordinates' workplaces (SIZ, tools, no unauthorized persons / sharp objects).
+- **3.6 "Контроль за безопасным выполнением работ"** (new section, 3.6.1-3.6.5):
+  - 3.6.1 what is controlled: SIZ use, tool/equipment condition, safe methods, guards/signs/hi-vis vests, prohibitions and safe distances;
+  - 3.6.2 targeted briefing before high-risk work;
+  - 3.6.3 actions on detected violation (stop work -> explain -> verify -> report + log);
+  - 3.6.4 no admission to work without briefing/PPE;
+  - 3.6.5 control does not release the manager from following the instruction himself.
+
+### For the next iteration
+- Appendices 1.1-1.3 still use the reference's **empty table templates** (SOUT / OPR / SIZ rows are blank on purpose). Fill them when actual SOUT cards are available.
+- Positions covered: Ведущий инженер садово-паркового хозяйства; Ведущий садовник; Главный садовник.
+- Remaining landscape-service positions not yet covered: Начальник садово-парковой службы, Агроном, Главный агроном, Техник по эксплуатации, Оператор по поливу, Уборщик территорий.
+- The "Руководители" instruction (Агроном / Начальник СПС / Главный агроном) still uses the old free-form structure and needs the same standardization pass.
