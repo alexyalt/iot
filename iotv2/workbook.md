@@ -224,3 +224,40 @@
 - Appendix structure is now identical to the gardener file: Приложение №1 (index) + 1.1 / 1.2 / 1.3 with empty table templates (no pre-filled СОУТ/ОПР/СИЗ data) — per the reference style.
 - Previous verbose version (with pre-filled СОУТ/ОПР/СИЗ tables) is superseded by this standardized version.
 - If a next group of positions is requested: reuse the same pipeline — copy `Инструкция_по_охране_труда_Садовник.md`, substitute position names, then append control clauses with numbers continuing the last clause of the section.
+
+## Record 5: Scope correction - landscape service instruction is NOT a managerial instruction
+
+**Date:** 16 November 2026
+**Status:** Completed
+
+### Customer requirement (key, applies to all future iterations):
+The positions in `Инструкция_по_охране_труда_Садово-парковая_служба_руководители.md`
+(Ведущий инженер садово-паркового хозяйства, Ведущий садовник, Главный садовник) are
+**NOT managerial positions**. They may only lead an assigned team (садовник, младший садовник,
+рабочий по благоустройству) in the field.
+
+Rules derived from this:
+- KEEP control functions over the assigned staff (СИЗ usage, tool serviceability, compliance, stopping unsafe work, reporting upward).
+- DO NOT assign employer-level / managerial duties: briefing and training delivery, provision of СИЗ, creating safe working conditions, investigating and documenting accidents, appointing senior/observer/spotter, distributing work, disciplinary authority.
+
+### What was changed (all edits are in the landscape-service file):
+| Clause | Before | After |
+|--------|--------|-------|
+| 1.3.7 | "Руководящий работник садово-парковой службы" (organizes work and controls subordinates) | "Работник, руководящий вверенным персоналом" - applies only while the worker is actually put in charge of a team; scope limited to control |
+| 1.4.1 | nervous-emotional strain "при руководстве группой работников и контроле..." | "при контроле за безопасным выполнением работ вверенным персоналом" |
+| 1.5.3 | "не допускать подчинённых к работам без инструктажа и без СИЗ" | "контролировать наличие пройденного инструктажа и исправных СИЗ"; terminology "подчинённые" -> "вверенные" |
+| 3.1.8 | literal `\\` escape artifacts around the heading (technical defect) | fixed to plain bold heading; "подчинённых" -> "вверенных" |
+| 3.4.4 | "перед выдачей инструмента работникам...", "контролировать своевременную замену СИЗ" | removed issuing authority; now checks tools, withdraws faulty ones and reports; reports need for СИЗ replacement |
+| 3.5.2 | "Руководящий работник при организации работ в группе: назначает старшего / распределяет работы / обеспечивает связь / назначает дежурного / назначает страховщика" | rewritten as pure control: checks that a senior is designated, that work matches qualification, that communication is maintained, that an observer/spotter is present; stops work on non-compliance |
+| 3.5.3 | "нарушение... подчинённым работником руководящий работник обязан" | subject replaced with "работник, руководящий вверенным персоналом", "вверенным работником"; explanation/stop/report duties kept |
+| 3.5.4 | "Запрещается допускать подчинённых работников к работам" (implies admission authority) | "Не допускается выполнение работ..."; added duty to stop work and report |
+| 6.2 | "Ответственность руководителя" with training, СИЗ provision, safe conditions, accident investigation | Responsibility of the worker leading assigned staff: control of briefing availability, СИЗ use, compliance, safe performance, timely reporting upward. New 6.2.2 explicitly states that briefing, training, СИЗ provision, safe conditions and accident investigation are the employer's duties and are NOT imposed by this instruction |
+
+### Verification performed:
+- No occurrences left of "подчинённ", "Руководящий работник", "руководящий работник" anywhere in the file.
+- No literal backslash artifacts left (count of `\` = 0).
+- Reference-standardized blocks from `Инструкция_по_охране_труда_Садовник.md` untouched except for the clauses listed above.
+
+### For the next iteration:
+- If further landscape-service positions are added, keep the same rule: control yes, managerial/employer functions no.
+- Same principle should be checked in any other instruction where the position title contains "ведущий"/"главный" but the role is not managerial.
